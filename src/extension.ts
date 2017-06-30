@@ -97,7 +97,7 @@ export function wrapText(selection: string, wrapper: string): string {
             /\$eSEL/g, 
             selection.replace(
                 /(\"|')/g, 
-                "\$1"
+                "\\$1"
             )
         ).replace(
             /\$SEL/g, 

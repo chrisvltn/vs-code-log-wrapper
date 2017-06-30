@@ -36,9 +36,9 @@ suite("Extension Tests", () => {
         assert.equal(myExtension.wrapText('Lorem Ipsum', '$SEL and $eSEL'), 'Lorem Ipsum and Lorem Ipsum');
         
         // Escaping quotes
-        assert.equal(myExtension.wrapText('Lor"e"m Ipsum', '$SEL and $eSEL'), 'Lor"e"m Ipsum and Lor\"e\"m Ipsum');
+        assert.equal(myExtension.wrapText('Lor"e"m Ipsum', '$SEL and $eSEL'), 'Lor"e"m Ipsum and Lor\\"e\\"m Ipsum');
         
         // Escaping simple and double quotes
-        assert.equal(myExtension.wrapText('Lor"e"m Ips\'u\'m', '$SEL and $eSEL'), 'Lor"e"m Ips\'u\'m and Lor\"e\"m Ips\'u\'m');
+        assert.equal(myExtension.wrapText('Lor"e"m Ips\'u\'m', '$SEL and $eSEL'), `Lor"e"m Ips'u'm and Lor\\"e\\"m Ips\\'u\\'m`);
     });
 });
