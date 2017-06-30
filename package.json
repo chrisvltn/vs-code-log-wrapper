@@ -2,7 +2,7 @@
     "name": "log-wrapper-for-vscode",
     "displayName": "Log Wrapper",
     "description": "Prints a debug command for the selected code and language",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "chrisvltn",
     "engines": {
         "vscode": "^1.13.0"
@@ -38,7 +38,7 @@
         "configuration": {
             "type": "object",
             "title": "Languages' wrappers",
-            "properties":{
+            "properties": {
                 "debugwrapper.wrappers": {
                     "type": "object",
                     "default": {
@@ -51,11 +51,13 @@
                 }
             }
         },
-        "commands": [{
-            "command": "extension.debugWrapMenu",
-            "title": "Debug Code Wrapper"
-        }],
-        "keybindings":[
+        "commands": [
+            {
+                "command": "extension.debugWrapMenu",
+                "title": "Debug Code Wrapper"
+            }
+        ],
+        "keybindings": [
             {
                 "command": "extension.debugWrapAfter",
                 "key": "ctrl+shift+q",
