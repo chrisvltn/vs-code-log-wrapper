@@ -1,0 +1,85 @@
+{
+    "name": "log-wrapper-for-vscode",
+    "displayName": "Log Wrapper",
+    "description": "Prints a debug command for the selected code and language",
+    "version": "1.0.0",
+    "publisher": "Christian Valentin",
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "license": "LICENSE",
+    "homepage": "https://github.com/chrisvltn/vs-code-log-wrapper/blob/master/README.md",
+    "bugs": {
+        "url": "https://github.com/chrisvltn/vs-code-log-wrapper/issues",
+        "email": "chris_valentin@outlook.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chrisvltn/vs-code-log-wrapper.git"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "debug",
+        "wrapper",
+        "console.log",
+        "log",
+        "var_dump"
+    ],
+    "activationEvents": [
+        "onCommand:extension.debugWrapMenu",
+        "onCommand:extension.debugWrapAfter",
+        "onCommand:extension.debugWrapBefore"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Languages' wrappers",
+            "properties":{
+                "debugwrapper.wrappers": {
+                    "type": "object",
+                    "default": {
+                        "javascript": "console.log('$eSEL', $SEL)",
+                        "typescript": "console.log('$eSEL', $SEL)",
+                        "php": "echo '<pre>$eSEL<br />'; var_dump($SEL); echo '</pre>';",
+                        "default": "print($SEL);"
+                    },
+                    "description": "List of wrappers for each language"
+                }
+            }
+        },
+        "commands": [{
+            "command": "extension.debugWrapMenu",
+            "title": "Debug Code Wrapper"
+        }],
+        "keybindings":[
+            {
+                "command": "extension.debugWrapAfter",
+                "key": "ctrl+shift+q",
+                "mac": "cmd+shift+q",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.debugWrapBefore",
+                "key": "ctrl+shift+alt+q",
+                "mac": "cmd+shift+alt+q",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    }
+}
