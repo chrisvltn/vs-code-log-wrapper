@@ -27,6 +27,7 @@
         "log",
         "var_dump"
     ],
+    "icon": "images/icon.png",
     "activationEvents": [
         "onCommand:extension.debugWrapMenu",
         "onCommand:extension.debugWrapAfter",
