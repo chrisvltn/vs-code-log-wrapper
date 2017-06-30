@@ -3,7 +3,7 @@
     "displayName": "Log Wrapper",
     "description": "Prints a debug command for the selected code and language",
     "version": "1.0.0",
-    "publisher": "Christian Valentin",
+    "publisher": "chrisvltn",
     "engines": {
         "vscode": "^1.13.0"
     },
